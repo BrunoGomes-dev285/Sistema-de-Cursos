@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario para Cursos</title>
+</head>
+<body>
+<h1>Formulario para a adicao de novos cursos</h1>
+<form th:action="@{/cursos}" th:object="${curso}" method="post">
+    <br>
+    <label>Nome do Curso</label>
+    <input type="text" th:field="*{nome}">
+    <br>
+    <label>Instrutor do Curso</label>
+    <input type="text" th:field="*{instrutor}">
+    <br>
+    <label>Descricao</label>
+    <input type="text" th:field="*{descricao}">
+    <br>
+    <label>Carga Horaria</label>
+    <input th:field="*{cargaHoraria}">
+    <br>
+    <label>Nivel do Curso</label>
+    <option th:each="nivel : ${nivel}"
+            th:value="${nivel}"
+            th:text="${nivel}">
+    </option>
+    <br>
+    <label>Status do Curso</label>
+    <option th:each="status : ${status}"
+            th:value="${status}"
+            th:text="${status}">
+    </option>
+    <br>
+    <button type="submit">Cadastrar</button>
+</form>
+
+
+</body>
+</html>

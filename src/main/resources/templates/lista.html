@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de cursos</title>
+</head>
+<body>
+<h1>Lista de Curos</h1>
+<br>
+<a th:href="@{/lista/formulario}">Criar Curso</a>
+<br>
+<a th:href="@{/lista}">Exibir Cursos</a>
+<br>
+<table border="1">
+<thead>
+<tr>
+<td>ID</td>
+<td>Nome</td>
+<td>Instrutor</td>
+<td>Descricao</td>
+<td>Carga Horaria</td>
+<td>Status</td>
+<td>Nivel</td>
+</tr>
+</thead>
+<tbody>
+<tr th:each="curso: ${curso}">
+    <td th:text="${curso.getId()}"></td>
+    <td th:text="${curso.getNome()}"></td>
+    <td th:text="${curso.getDescricao()}"></td>
+    <td th:text="${curso.getCargaHoraria()}"></td>
+    <td th:text="${curso.getStatus()}"></td>
+    <td th:text="${curso.getNivel()}"></td>
+</tr>
+</tbody>
+</table>
+
+
+</body>
+</html>
